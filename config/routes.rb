@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   devise_for :installs
 
- root'home#index'
+ root'cards#index'
 
   
   get 'menus/game' => 'menus#game'

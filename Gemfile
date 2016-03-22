@@ -24,11 +24,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
-gem "bootstrap-sass-rails"
+
+gem 'materialize-sass'
 
 gem 'bootstrap-sass', '~> 3.3.6'
-
-#gem 'bootstrap-material-design'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
