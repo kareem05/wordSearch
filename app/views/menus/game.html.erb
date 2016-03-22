@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Search Game</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" src="jquery-1.6.2.min.js" ></script>
+  <script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script>
+  <script type="text/javascript" src="jquery.wordsearchgame.js" id="js-script"></script>
+  <link  rel="stylesheet" type="text/css" href="jquery.wordsearchgame.css">
+  <style>
+    #js-script{margin-top: 25%;
+      margin-left: 23%;
+    }
+
+  </style>
+  <script>
+    $(document).ready( function () {
+      var words = '<%=$card_content%>';/*,neptune,pluto,saturn,jupiter,one,two,"+
+       "three,four,five,six,seven,eight,mozart,bach,meyer,rose,mahler";*/
+       var size = '<%=$card_size%>';
+
+      //attach the game to a div
+      $("#theGrid").wordsearchwidget(
+          {"wordlist" : words,
+            "gridsize" : size,
+            "onWordFound" : function(ob){
+              $('#onWordFound').html("Found: " + ob.word);
+              d = setTimeout(function(){
+                clearTimeout(d);
+                $('#onWordFound').html(" ");
+              },3000);
+
+            },
+            "onWordSearchComplete" :function(){
+              $('#onWordSearchComplete').html("Word Search Complete");
+            }
+          });
+    });
+
+
+  </script>
+
+</head>
+<body>
+<div id="theGrid"></div>
+<div id="onWordSearchComplete"></div>
+<div id="onWordFound"></div>
+ </body>
+</html>

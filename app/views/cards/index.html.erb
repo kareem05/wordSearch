@@ -1,0 +1,65 @@
+<div class="container">
+
+    <div class="row">
+      <div class="text-center">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary active btn-lg" data-toggle="modal" data-target="#mynewcard">
+            New Card
+          </button>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+
+    <div class="row" id="container_cards">
+        <%= render @cards %>
+    </div>
+
+    <div class="col-lg-6 col-lg-offset-3 text-center" id="link">
+    <style>
+    #link{margin-top: 15%;
+      margin-left: 25%;
+    }
+
+  </style>
+<%=link_to "Start Game", "/menus/game", :type => "button", :class => "btn btn-lg
+  btn-warning"%>
+
+
+
+    <!-- Modal  create action -->
+      <%= form_for(@card, remote: true) do |f| %>
+        <div class="modal fade" id="mynewcard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Card</h4>
+            </div>
+            
+            <div class="modal-body">
+              <div class="field">
+                <%= f.label :title %><br>
+                <%= f.text_area :title, class: "form-control card_title" %>
+              </div>
+              <div class="field">
+                <%= f.label :content %><br>
+                <%= f.text_area :content, class: "form-control card_content" %>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" id="mynewcardclose">Close</button>
+              <%= submit_tag "Create", class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+        </div>
+      <% end %>
+    <!-- Modal -->
+
+
+
+</div>
