@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom" >
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="cards">WordSearch</a>
@@ -20,7 +20,17 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
+
     </ul>
   </div>
 </nav>
