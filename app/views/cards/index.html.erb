@@ -5,31 +5,36 @@
      
           <!-- Button trigger modal -->
 
-                            <div class="btn-group" role="group" aria-label="..." id="buttonGroup">
+            <div class="btn-group" role="group" aria-label="..." id="buttonGroup">
                   
-          <button type="button" class="btn btn-primary active btn-lg" data-toggle="modal" data-target="#mynewcard" >
-            New Card
-          </button>
-                         <%=link_to "Next", "/menus/game", :type => "button", :class => "btn btn-lg
-                                                                                        btn-warning"  %>
+      
+      <button type="button" class="btn btn-primary active btn-lg" data-toggle="modal" data-target="#mynewcard" > 
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      New Card 
 
-                            </div>
+      </button>
+
+     <%=link_to "Next", "/menus/game", :type => "button", :class => "btn btn-lg btn-warning" %>
+        
+
+
+
+                      </div>
                         </div>
+                         <style>
+                          #buttonGroup{position: fixed;
+                                        margin-left: 75%;
+                                        margin-top: 40%
+                          }
+                          </style>    
+
                           <br>
                           <hr>
 
                           <div class="row" id="container_cards">
                               <%= render @cards %>
                           </div>
-                          <style>
-                          #buttonGroup{position: fixed;
-                                        margin-left: 75%;
-                                        margin-top: 40%
-
-
-                          }
-                          </style>    
-
+                         
 
     <!-- Modal  create action -->
       <%= form_for(@card, remote: true) do |f| %>

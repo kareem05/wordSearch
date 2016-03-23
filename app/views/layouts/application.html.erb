@@ -9,18 +9,23 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top navbar-custom" >
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom" id="navbar" >
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="cards">WordSearch</a>
+      <a class="navbar-brand" href="/cards">WordSearch</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="cards">Home</a></li>
+      <li class="active"><a href="/home">Home</a></li>
       <li><a href="#">Settings</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
   
+<style >
+#navbar{
 
+}
+
+</style>
 
 <% if user_signed_in? %>
   <li>

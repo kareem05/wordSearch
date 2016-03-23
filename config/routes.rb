@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
  root'cards#index'
 
-  
+  resources 'home'
   get 'menus/game' => 'menus#game'
 
   get 'menus/index'
