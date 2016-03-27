@@ -1,5 +1,6 @@
 
-$("#myupdatecard_<%= @card.id %>").modal('hide');
+$('#myupdatecard_<%= @card.id %>').hide();
+$(".modal-backdrop").remove(); 
 
 $("#card_<%= @card.id %>").fadeOut(500, function(){
 

@@ -17,7 +17,9 @@ $card_title = @card.title
 $card_content = @card.content
 $card_size = @card.size
 
-puts "#$card_size"
+$card_words_count = $card_content.scan(/\b/).size/2
+
+puts $card_words_count
   end
 
   # GET /cards/new
@@ -59,7 +61,7 @@ puts "#$card_size"
       else
         format.html { render :edit }
         format.json { render json: @card.errors, status: :unprocessable_entity }
-        format.js
+        format.js   
       end
     end
   end
@@ -69,7 +71,7 @@ puts "#$card_size"
     respond_to do |format|
       format.html { redirect_to cards_url, notice: 'Card was successfully destroyed.' }
       format.json { head :no_content }
-      format.js
+      format.js   
     end
   end
 
