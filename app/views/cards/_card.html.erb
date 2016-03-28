@@ -1,13 +1,13 @@
 <div class="col-md-4 blog-main box text-center" id="card_<%= card.id %>">
 
-            <div class="panel panel-info"><!-- Panel Info -->
+            <div class="panel panel-info" ><!-- Panel Info -->
 
                   <div class="panel-heading">
                     <h3 class="panel-title"><%= card.title %></h3>
                     <p><%= card.content %></p>
                   </div>
 
-                  <div class="panel-body"><!-- Panel Body -->
+                  <div class="panel-body" id="panel"><!-- Panel Body -->
                     <div style="color: #3BB2D6;"><%= time_ago_in_words(card.created_at) %></div>
                     <br>
 
@@ -25,8 +25,14 @@
                   
                   </div><!-- Panel Body -->
 
+
             </div><!-- Panel Info -->
 
+                    <style type="text/css">
+                    #panel{
+                         position:relative;
+                       }
+                    </style>
 
             <!-- Modal - update cards -->
                   <%= form_for(card, :method => :put, remote: true) do |f| %>

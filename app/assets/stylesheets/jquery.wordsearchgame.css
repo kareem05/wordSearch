@@ -15,8 +15,8 @@
 
 /* Style for the grid */
 .rf-tablestyle {
-    border: 2px solid;
-    border-color: gold;
+    border: 4px solid;
+    border-color: orange;
     background-color: ghostwhite;
     cursor: pointer;
 
@@ -27,7 +27,7 @@
     float: left;
     padding-right: 50px;
     margin-left: 30%;
-    margin-top: 15%;
+    margin-bottom: 20%;
 
 }
 
@@ -41,8 +41,8 @@
     margin-top: 20%;
 
 
-    border: 2px solid;
-    border-color: gold;
+    border: 4px solid;
+    border-color: orange;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;

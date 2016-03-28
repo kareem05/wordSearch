@@ -11,7 +11,7 @@
 
             <!-- Progress Bar -->
      
-                   <canvas id="my_canvas" width="150" height="150" style="border:1px dashed #CCC;margin-top:10%; margin-left:30%;"></canvas>
+                   <canvas id="my_canvas" width="150" height="150" style="margin-top:10%; margin-left:80%;"></canvas>
                       <script>
 
                       
@@ -69,7 +69,7 @@
 
                         ctx.clearRect(0, 0, cw, ch);
                         ctx.lineWidth = 20;   //width of the line
-                        ctx.fillStyle = '   #000000'; //colour of the text
+                        ctx.fillStyle = '#0000FF'; //colour of the text
                         ctx.strokeStyle = "#FFA500"; //colur of the loader it self
                         ctx.textAlign = 'center';
                         ctx.fillText(al+'%', cw*.5, ch*.5+2, cw);
@@ -77,14 +77,19 @@
                         ctx.arc(75, 75, 65, start, diff/10+start, false);
                         ctx.stroke();
 
-                        if(al < prozent){
+                        if(al <= prozent){
                               al ++;
                           }
 
-                        if(al > 100){
+                        if(al >= 100){
+                          
                           clearTimeout(sim);
                             // Add scripting here that will run when progress completes
-                           // sweetAlert("Oops...", "Something went wrong!", "error");
+                            sweetAlert({
+                                title: "ممتاز",
+                                text: "!استمر في التقدم",
+                                imageUrl:"<%= asset_path('goodJob.png') %>"
+                              });
                             }
                         
                       }
