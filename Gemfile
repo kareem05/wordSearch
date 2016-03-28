@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
-gem 'sweet-alert', '~> 0.0.7'
+gem 'sweet-alert'
 
 gem 'materialize-sass'
 

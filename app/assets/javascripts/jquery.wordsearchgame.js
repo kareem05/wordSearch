@@ -103,8 +103,8 @@
 
     var currentWord = 0;
     var maxWords = 0;
-    var encontrePalabra = undefined;
-    var cuandoEncuentreTodas = undefined;
+    var wordFound = undefined;
+    var whenFindAll = undefined;
     $.widget("ryanf.wordsearchwidget", $.ui.mouse, {
 
             options : {
@@ -121,8 +121,8 @@
                 this.hotzone    = new Hotzone();
                 this.arms       = new Arms();
 
-                encontrePalabra = this.options.onWordFound;
-                cuandoEncuentreTodas = this.options.onWordSearchComplete;
+                wordFound = this.options.onWordFound;
+                whenFindAll = this.options.onWordSearchComplete;
                 maxWords = this.options.wordlist.split(",").length;
 
                 GameWidgetHelper.renderGame(this.element[0],this.model);
@@ -1323,12 +1323,12 @@
             if (!jQuery(w).hasClass('rf-foundword')){
                 Visualizer.signalWordFound(w);
                 currentWord++;
-                if (typeof encontrePalabra == "function"){
-                    encontrePalabra({id:idx,word:$(w).text()});
+                if (typeof wordFound == "function"){
+                    wordFound({id:idx,word:$(w).text()});
                 }
-                if (typeof cuandoEncuentreTodas == "function"){
+                if (typeof whenFindAll == "function"){
                     if (currentWord >= maxWords){
-                        cuandoEncuentreTodas({});
+                        whenFindAll({});
                     }
                 }
             }

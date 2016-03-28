@@ -6,38 +6,38 @@
 
   <title>Word Search Game</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <script type="text/javascript" src="jquery-1.6.2.min.js" ></script>
-  <script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script>
-  <script type="text/javascript" src="jquery.wordsearchgame.js" id="js-script"></script>
-  <link  rel="stylesheet" type="text/css" href="jquery.wordsearchgame.css">
-  <style>
-    #js-script{margin-top: 15%;
-      margin-left: 23%;
-    }
-
-  </style>
+  
 
 
+            <!-- Progress Bar -->
+     
+                   <canvas id="my_canvas" width="150" height="150" style="border:1px dashed #CCC;margin-top:10%; margin-left:30%;"></canvas>
+                      <script>
 
-<div class="progress" id="progressBar">
-  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40"
-  aria-valuemin="0" aria-valuemax="100" style="width:50%">
-    60% Complete (warning)
-  </div>
-</div>
- <style>
-    #progressBar{
-      margin-top: 5%;
-      
-    }
+                      
+                      
+                      </script>
 
-  </style>
-
+              <!-- Game -->
   <script>
-    $(document).ready( function () {
-      var words = '<%=$card_content%>';/*,neptune,pluto,saturn,jupiter,one,two,"+
+
+    var ctx = document.getElementById('my_canvas').getContext('2d');
+                      var al = 0; //amount loaded
+                      var start = 4.72; //perfect north(high noon )the point where progress starts
+                      var cw = ctx.canvas.width; //canvas width
+                      var ch = ctx.canvas.height; //canvas height
+                      var diff;
+                      var prozent = 0;
+                      var words = '<%=$card_content%>';/*,neptune,pluto,saturn,jupiter,one,two,"+
        "three,four,five,six,seven,eight,mozart,bach,meyer,rose,mahler";*/
        var size = '<%=$card_size%>';
+
+       var wordsSolved = '0' ;
+      var wordsCount = '<%=$card_words_count%>';
+
+    $(document).ready( function () {
+      
+       
 
       //attach the game to a div
       $("#theGrid").wordsearchwidget(
@@ -46,28 +46,59 @@
             "onWordFound" : function(ob){
               $('#onWordFound').html("Found: " + ob.word);
               d = setTimeout(function(){
+                
                 clearTimeout(d);
-                $('#onWordFound').html(" ");
-              },3000);
 
+                $('#onWordFound').html(" ");},3000);
+                 wordsSolved ++;
+                
+                prozent = Math.round (wordsSolved/wordsCount * 100) ;
+                
             },
             "onWordSearchComplete" :function(){
               $('#onWordSearchComplete').html("Word Search Complete");
                  
             }
+
           });
     });
 
+      function progressSim(){
+                      
+                       diff = ((al / 100) * Math.PI*2*10).toFixed(2);
 
+                        ctx.clearRect(0, 0, cw, ch);
+                        ctx.lineWidth = 20;   //width of the line
+                        ctx.fillStyle = '   #000000'; //colour of the text
+                        ctx.strokeStyle = "#FFA500"; //colur of the loader it self
+                        ctx.textAlign = 'center';
+                        ctx.fillText(al+'%', cw*.5, ch*.5+2, cw);
+                        ctx.beginPath();
+                        ctx.arc(75, 75, 65, start, diff/10+start, false);
+                        ctx.stroke();
+
+                        if(al < prozent){
+                              al ++;
+                          }
+
+                        if(al > 100){
+                          clearTimeout(sim);
+                            // Add scripting here that will run when progress completes
+                           // sweetAlert("Oops...", "Something went wrong!", "error");
+                            }
+                        
+                      }
+                      var sim = setInterval(progressSim, 50); //repeat progressSim every 50ms
+
+                      
+                      
   </script>
-
 
 </head>
 <body>
 <div id="theGrid"></div>
 <div id="onWordSearchComplete"></div>
 <div id="onWordFound"></div>
-    <style> #onWordFound{margin-top: } 
-    </style>
+
  </body>
 </html>
