@@ -1,0 +1,24 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+   background-image: image-url('background.png');
+}
+
+body { 
+     font-size: 18px; }
+	.red-circle-button { 
+	  box-shadow: 2px 4px 0 2px rgba(1,5,0,0.1);
+	  border: .5em solid 57925;
+	  font-size: 1.5em; line-height: 1.1em; color: #ffffff; background-color: #0000FF;
+	  margin-top: 10%;
+	  margin-left: 40%;
+	   border-radius: 50%; 
+	   height: 7em; 
+	   width: 7em; 
+	   position: relative; }
+	.red-circle-button:hover { 
+	  color:#ffffff; background-color: #e84d0e; text-decoration: none; border-color: #ff7536; }
+	.red-circle-button:visited { color:#ffffff; background-color: #0000FF; text-decoration: none; } 
+	

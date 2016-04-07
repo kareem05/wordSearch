@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WordSearch</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom" id="navbar" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/cards">WordSearch</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/home">Home</a></li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+  
+
+<% if user_signed_in? %>
+<li>
+<%= link_to('User Logout', destroy_user_session_path, :method => :delete) %>  
+</li>   
+<% end %>
+
+ <li>
+<%= link_to('Users', users_index_path) %>  
+</li>   
+
+
+    </ul>
+  </div>
+</nav>s
+<%= yield %>
+
+</body>
+</html>
