@@ -12,9 +12,11 @@ class CardsController < ApplicationController
   # GET /cards/1
   # GET /cards/1.json
   def show
+
 $card_title = @card.title
 $card_content = @card.content
 $card_size = @card.size
+
 $card_words_count = $card_content.scan(/\b/).size/2
 
 puts $card_words_count

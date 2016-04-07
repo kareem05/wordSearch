@@ -27,6 +27,7 @@ gem 'devise'
 
 gem 'sweet-alert'
 
+
 gem 'carrierwave'
 
 gem 'materialize-sass'

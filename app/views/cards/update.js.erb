@@ -1,9 +1,10 @@
 
-                       
 $('#myupdatecard_<%= @card.id %>').hide();
 $(".modal-backdrop").remove(); 
 
 $("#card_<%= @card.id %>").fadeOut(500, function(){
+
 	$(this).remove();
 	$("#container_cards").prepend('<%= j render @card %>');	
 });
+
