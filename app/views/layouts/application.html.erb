@@ -25,7 +25,10 @@
 <li>
 <%= link_to('User Logout', destroy_user_session_path, :method => :delete) %>  
 </li>   
-<% end %>
+<li>
+  <%= link_to 'User Record', user_path(current_user) %>
+</li>
+<%end %>
 
  <li>
 <%= link_to('Users', users_index_path) %>  

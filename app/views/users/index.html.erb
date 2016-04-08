@@ -1,6 +1,8 @@
-<% @users = User.all %>
-<% @users.each do |user| %>
-  <%= user.name%><br/>
-  <%= user.email %><br/>
-<% end %>
 
+<h1>Current users</h1>
+
+
+<% @users.each do |user| %>
+
+<%= user.email %>
+<% end %>

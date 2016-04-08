@@ -6,9 +6,11 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
+  
+
   resources :cards
   devise_for :users
-  resources :users, :only =>[:show]
+ 
 
   devise_for :students
   devise_for :teachers

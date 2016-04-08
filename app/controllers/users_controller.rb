@@ -1,8 +1,17 @@
 class UsersController < ApplicationController
-  def index
+  
+  	def index
+  		@users = User.all 
   	
-  end
+    end
 
-  def show
-  end
+	def show
+		if current_user
+     		@user = User.find(current_user)
+ 		else
+    	    redirect_to new_user_session_path, notice: 'You are not logged in.'
+   		end
+		
+	end
+
 end
