@@ -1,26 +1,17 @@
 Rails.application.routes.draw do
 
-
-
   get 'users/index'
-
   get 'users/show'
-
-  
-
   resources :cards
-  devise_for :users
- 
-
+  devise_for :users 
   devise_for :students
   devise_for :teachers
   resources :teachers, only: [:index]
   devise_for :installs
-
-root'cards#index'
-resources 'home'
-resources 'menus'
-resources 'users'
+  root'cards#index'
+  resources 'home'
+  resources 'menus'
+  resources 'users'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
