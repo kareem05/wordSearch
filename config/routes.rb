@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources 'home'
   resources 'menus'
   resources 'users'
+  resources 'enrollments'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

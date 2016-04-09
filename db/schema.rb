@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160407134126) do
-
-
+ActiveRecord::Schema.define(version: 20160409161459) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +19,13 @@ ActiveRecord::Schema.define(version: 20160407134126) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "size"
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "installs", force: :cascade do |t|
@@ -42,6 +46,15 @@ ActiveRecord::Schema.define(version: 20160407134126) do
   add_index "installs", ["email"], name: "index_installs_on_email", unique: true
   add_index "installs", ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
 
+  create_table "student_subs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teacher_subs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.boolean  "admin"
@@ -60,7 +73,6 @@ ActiveRecord::Schema.define(version: 20160407134126) do
     t.string   "name"
     t.string   "type"
     t.text     "words"
-
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

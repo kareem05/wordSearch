@@ -2,6 +2,25 @@
 <!--%= link_to "current_user_show", current_user %-->
 <h1>CUrrent User</h1>
 
+
+
+<label>email</label>
 <%= @user.email %>
+<br>
+<label>type</label>
 <%= @user.type %>
+<br>
+<label>name</label>
 <%= @user.name %>
+
+<h2>Friends</h2>
+<ul>
+  <% for enrollment in @user.enrollments %>
+    <li>
+      <%= enrollment.student.name%>
+      (<%= link_to "remove", enrollment, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Find Student", users_path %></p>
