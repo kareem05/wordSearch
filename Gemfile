@@ -27,8 +27,10 @@ gem 'devise'
 
 gem 'sweet-alert'
 
+gem 'remotipart'
 
-gem 'carrierwave'
+gem "rmagick"
+gem "carrierwave"
 
 gem 'materialize-sass'
 

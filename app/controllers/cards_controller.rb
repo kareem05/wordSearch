@@ -83,7 +83,7 @@ puts $card_words_count
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:title, :content, :size)
+      params.require(:card).permit(:title, :content, :size,:image)
     end
 
     helper_method :check
