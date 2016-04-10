@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   resources 'menus'
   resources 'users'
   resources 'enrollments'
-
+as :user do
+  get 'users/show', :to => 'users#show', :as => :user_root # Rails 3
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

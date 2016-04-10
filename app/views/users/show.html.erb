@@ -1,26 +1,43 @@
 
 <!--%= link_to "current_user_show", current_user %-->
-<h1>CUrrent User</h1>
+<h1>My Profile</h1>
+
+<ul class="list-group">
+  
+  		<li class="list-group-item">
+		<label>Name:</label>
+		<%= @user.name %>
+		</li>
+  
+ 		<li class="list-group-item">
+		<label>Email:</label>
+		<%= @user.email %>
+		</li>
+
+		<li class="list-group-item">
+		<label>Member Category:</label>
+		<%= @user.type %>
+		</li>
+
+		</ul>
+<% if @user.type == "Teacher"%>
+<h2>My Students</h2>
+<%end%>
+
+<% if @user.type == "Student"%>
+<h2>My Friends</h2>
+<%end%>
 
 
-
-<label>email</label>
-<%= @user.email %>
-<br>
-<label>type</label>
-<%= @user.type %>
-<br>
-<label>name</label>
-<%= @user.name %>
-
-<h2>Friends</h2>
-<ul>
   <% for enrollment in @user.enrollments %>
-    <li>
+  
+    	<li class="list-group-item">
       <%= enrollment.student.name%>
-      (<%= link_to "remove", enrollment, :method => :delete %>)
-    </li>
-  <% end %>
-</ul>
+      <%= link_to '<i class="glyphicon glyphicon-trash"></i> Delete Student'.html_safe, enrollment, :method => :delete ,:class => "btn btn-danger"%>
 
-<p><%= link_to "Find Student", users_path %></p>
+      </li>
+
+  <% end %>
+
+
+<p><%= link_to "Find Student", users_path ,:class => "btn btn-warning"%></p>

@@ -4,10 +4,10 @@ class EnrollmentsController < ApplicationController
   @enrollment = current_user.enrollments.build(:student_id => params[:student_id])
   if @enrollment.save
     flash[:notice] = "Added student."
-    redirect_to :back
+    redirect_to :user_root
   else
     flash[:error] = "Unable to add student."
-    redirect_to root_url
+    redirect_to :user_root
   end
 end
 
