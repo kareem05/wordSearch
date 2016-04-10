@@ -46,12 +46,7 @@ ActiveRecord::Schema.define(version: 20160409161459) do
   add_index "installs", ["email"], name: "index_installs_on_email", unique: true
   add_index "installs", ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
 
-  create_table "student_subs", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "teacher_subs", force: :cascade do |t|
+  create_table "teacher_students", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
