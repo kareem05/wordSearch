@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'taking_lesson/create'
+
+  get 'taking_lesson/destroy'
+
   get 'users/index'
   get 'users/show'
   resources :cards

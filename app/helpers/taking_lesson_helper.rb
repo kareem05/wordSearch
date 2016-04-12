@@ -1,0 +1,2 @@
+module TakingLessonHelper
+end

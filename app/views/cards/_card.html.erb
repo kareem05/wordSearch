@@ -41,7 +41,7 @@
                     </style>
 
             <!-- Modal - update cards -->
-                  <%= form_for(card, :method => :put, remote: true) do |f| %>
+                  <%= form_for(card, :method => :put, remote: true, :html => {:multipart => true}) do |f| %>
                   <div class="modal fade" id="myupdatecard_<%= card.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -64,6 +64,14 @@
                         <%= f.label :diffculty%><br>
                         <%= f.select(:size, options_for_select([['Easy',7], ['Moderate',10],['Hard',15]]), {}, {class: "form-control"}) %>
                       </div>
+                         <div class="field">
+                        <%= f.file_field :image %><br/>
+                        
+                        </div>
+
+
+
+
 
                       </div>
                       <div class="modal-footer">

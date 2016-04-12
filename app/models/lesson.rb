@@ -1,5 +1,5 @@
 class Lesson < ActiveRecord::Base
 
-	   # has_many :cards
-		#has_many :students, :through => :enrollments
+	   has_many :cards
+	   
 end
