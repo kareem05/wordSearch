@@ -7,6 +7,7 @@ class CardsController < ApplicationController
   def index
     @cards = Card.all
     @card = Card.new
+    @lessons = Lesson.order(:title)
   end
 
   # GET /cards/1
@@ -25,6 +26,7 @@ puts $card_words_count
   # GET /cards/new
   def new
     @card = Card.new
+    @lessons = Lesson.order(:title)
   end
 
   # GET /posts/1/edit
@@ -35,6 +37,7 @@ puts $card_words_count
   # POST /posts
   # POST /posts.json
   def create
+    @lessons = Lesson.order(:title)
     @card = Card.new(card_params)
  
     respond_to do |format|
@@ -53,6 +56,7 @@ puts $card_words_count
 
 
   def update
+    @lessons = Lesson.order(:title)
     respond_to do |format|
       if @card.update(card_params)
         format.html { redirect_to @card, notice: 'Card was successfully updated.' }
@@ -83,7 +87,7 @@ puts $card_words_count
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:title, :content, :size,:image)
+      params.require(:card).permit(:title, :content, :size,:image,:lesson_id)
     end
 
     helper_method :check

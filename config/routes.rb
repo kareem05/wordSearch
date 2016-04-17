@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources 'menus'
   resources 'users'
   resources 'enrollments'
+  resources 'lessons'
 as :user do
   get 'users/show', :to => 'users#show', :as => :user_root # Rails 3
 end

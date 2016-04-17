@@ -1,0 +1,33 @@
+<div class="col-md-4 blog-main box text-center" id="lesson_<%= lesson.id %>">
+
+
+                 
+            <div class="panel panel-info" ><!-- Panel Info -->
+
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><%= lesson.title %></h3>
+                  </div>
+
+                  <div class="panel-body" id="panel"><!-- Panel Body -->
+                    
+                    <div style="color: #3BB2D6;"><%= time_ago_in_words(lesson.created_at) %></div>
+                    <br>
+
+
+                    <div class="btn-group" role="group" aria-label="...">
+
+                         <%= link_to 'Lesson Cards', lesson ,class: "btn btn-primary"%> 
+                       
+                        <%= link_to 'Destroy', lesson, method: :delete, class: "btn btn-danger", remote: true %>
+                        
+                       
+                    </div>
+
+                  </div><!-- Panel Body -->
+
+            </div><!-- Panel Info -->
+
+            
+
+
+</div>

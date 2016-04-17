@@ -1,0 +1,15 @@
+
+<h1><%= @lesson.title %> Cards</h1>
+
+<ul class="list-group">
+<% @lesson.cards.each do |card| %>
+
+<li class="list-group-item">
+<%= card.title %>
+</li>
+
+
+<% end %>
+
+ 
+</ul>

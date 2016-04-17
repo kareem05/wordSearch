@@ -1,0 +1,8 @@
+
+$('#mynewlesson').hide();
+$(".modal-backdrop").remove(); 
+
+$(".lesson_title").val('');
+
+$("#container_lessons").prepend('<%= j render @lesson %>');
+

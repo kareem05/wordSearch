@@ -1,0 +1,50 @@
+<div class="container">
+
+    <div class="row">
+
+
+        </div>
+
+           <button type="button" class="btn btn-primary active btn-lg" data-toggle="modal" data-target="#mynewlesson" id = "newButton"> 
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      New Lesson
+
+      </button>
+       <style> #newButton{position:fixed;margin-left: 75%;  margin-top: 40% } </style>    
+                         
+     </div>
+          <div class="row" id="container_lessons">
+                     <%= render @lessons %>
+
+  
+
+
+<%= form_for(@lesson, remote: true)  do |f| %>
+        <div class="modal fade" id="mynewlesson" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">lesson</h4>
+            </div>
+            
+            <div class="modal-body">
+              <div class="field">
+                <%= f.label :title %><br>
+                <%= f.text_area :title, class: "form-control lesson_title" %>
+              </div>
+             
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" id="mynewlessonclose">Close</button>
+              <%= submit_tag "Create", class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+        </div>
+      <% end %>
+    <!-- Modal -->
+
+
+
+</div>

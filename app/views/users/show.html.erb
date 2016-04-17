@@ -1,4 +1,4 @@
-
+<!--link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"-->		
 <!--%= link_to "current_user_show", current_user %-->
 <h1>My Profile</h1>
 
@@ -33,7 +33,7 @@
   
     	<li class="list-group-item">
       <%= enrollment.student.name%>
-      <%= link_to '<i class="glyphicon glyphicon-trash"></i> Delete Student'.html_safe, enrollment, :method => :delete ,:class => "btn btn-danger"%>
+      <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, enrollment, :method => :delete ,:class => "btn btn-danger"%>
       </li>
 
   <% end %>

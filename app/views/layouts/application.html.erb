@@ -27,6 +27,10 @@
 </li>
 <%end %>
 
+<li>
+<%= link_to('Lessons', lessons_path, :method => :get) %>  
+</li>  
+
 
 <li>
 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  

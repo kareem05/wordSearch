@@ -1,0 +1,10 @@
+
+$('#myupdatelesson_<%= @lesson.id %>').hide();
+$(".modal-backdrop").remove(); 
+
+$("#lesson_<%= @lesson.id %>").fadeOut(500, function(){
+
+	$(this).remove();
+	$("#container_lessons").prepend('<%= j render @lesson %>');	
+});
+
