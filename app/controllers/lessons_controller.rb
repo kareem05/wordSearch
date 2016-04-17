@@ -39,7 +39,7 @@ def create
   
   def update
     respond_to do |format|
-      if @card.update(lesson_params)
+      if @lesson.update(lesson_params)
         format.html { redirect_to @card, notice: 'Lesson was successfully updated.' }
         format.json { render :show, status: :ok, location: @card }
         format.js
