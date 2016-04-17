@@ -4,15 +4,16 @@
 
 
         </div>
+         <div class="btn-group" role="group" aria-label="..." id="buttonGroup">
 
-           <button type="button" class="btn btn-primary active btn-lg" data-toggle="modal" data-target="#mynewlesson" id = "newButton"> 
-      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-      New Lesson
-
-      </button>
-       <style> #newButton{position:fixed;margin-left: 75%;  margin-top: 40% } </style>    
-                         
+           <button type="button" class="btn btn-primary active btn-lg" data-toggle="modal" data-target="#mynewlesson" id = "newButton"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>New Lesson</button>
+          
+                            
      </div>
+
+     <style> #buttonGroup{position:fixed;margin-left: 70%;  margin-top: 35% } </style> 
+
+   </div>
           <div class="row" id="container_lessons">
                      <%= render @lessons %>
 

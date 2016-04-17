@@ -21,6 +21,7 @@ $card_size = @card.size
 $card_words_count = $card_content.scan(/\b/).size/2
 
 puts $card_words_count
+
   end
 
   # GET /cards/new

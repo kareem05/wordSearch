@@ -8,48 +8,62 @@ class LessonsController < ApplicationController
   end
 
  def show
+   words_array = Array.new
 
+     if @lesson.cards.present? 
+          puts words_array
 
-  end
+          @lesson.cards.each do |card| 
+            words_array << card.title 
+          end 
 
+          $words = words_array.join(",")
+          $words_count = $words.scan(/\b/).size/2
+          
 
-def new
-     @Lesson = Lesson.new
-end
-
-
-
-def create
-    @lesson = Lesson.new(lesson_params)
- 
-    respond_to do |format|
-      if @lesson.save
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
-        format.json { render :show, status: :created, location: @lesson}
-        format.js
-      else
-        format.html { render :new }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
-        format.js
-      end
     end
+          puts $words
+          puts $words_count
   end
+
+
+    def new
+         @Lesson = Lesson.new
+    end
+
+
+
+        def create
+            @lesson = Lesson.new(lesson_params)
+         
+            respond_to do |format|
+              if @lesson.save
+                format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
+                format.json { render :show, status: :created, location: @lesson}
+                format.js
+              else
+                format.html { render :new }
+                format.json { render json: @lesson.errors, status: :unprocessable_entity }
+                format.js
+              end
+            end
+          end
 
 
   
-  def update
-    respond_to do |format|
-      if @lesson.update(lesson_params)
-        format.html { redirect_to @card, notice: 'Lesson was successfully updated.' }
-        format.json { render :show, status: :ok, location: @card }
-        format.js
-      else
-        format.html { render :edit }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
-        format.js   
-      end
-    end
-  end
+          def update
+            respond_to do |format|
+              if @lesson.update(lesson_params)
+                format.html { redirect_to @card, notice: 'Lesson was successfully updated.' }
+                format.json { render :show, status: :ok, location: @card }
+                format.js
+              else
+                format.html { render :edit }
+                format.json { render json: @lesson.errors, status: :unprocessable_entity }
+                format.js   
+              end
+            end
+          end
 
   def destroy
     @lesson.destroy
