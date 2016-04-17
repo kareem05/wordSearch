@@ -21,7 +21,8 @@ class LessonsController < ApplicationController
           $words_count = $words.scan(/\b/).size/2
           
 
-    end
+    end 
+          $grid_size = @lesson.size
           puts $words
           puts $words_count
   end
@@ -79,7 +80,7 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:title)
+      params.require(:lesson).permit(:title,:size)
     end
 
     helper_method :check

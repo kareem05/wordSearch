@@ -47,6 +47,10 @@
                         <%= f.label :title %><br>
                         <%= f.text_area :title, class: "form-control" %>
                       </div>
+                      <div class="form-group">
+                        <%= f.label :diffculty%><br>
+                        <%= f.select(:size, options_for_select([['Easy',7], ['Moderate',10],['Hard',15]]), {}, {class: "form-control"}) %>
+                      </div>
                   
                       </div>
                       <div class="modal-footer">

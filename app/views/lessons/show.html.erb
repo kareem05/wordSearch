@@ -1,5 +1,5 @@
 
-<h1><%= @lesson.title %> Cards</h1>
+<h1><%= @lesson.title %> </h1>
 
 <ul class="list-group">
 <% @lesson.cards.each do |card| %>
@@ -13,5 +13,8 @@
 
  
 </ul>
-<%=link_to "play!", "/menus/show", :type => "button", :class => "btn btn-lg btn-warning" %>
-<%= link_to('Add Cards', cards_path, :method => :get,:class => "btn btn-warning") %>  
+<div class="btn-group">
+  <%= link_to('Add Cards', cards_path, :method => :get,:class => "btn btn-warning") %>                      
+<%=link_to "play!", "/menus/show", :type => "button", :class => "btn btn-primary" , :id => "playButton" %>
+<!--style type="text/css">#playButton{position:fixed; margin-left: 70%;margin-top: 25% }</style -->
+  </div>
