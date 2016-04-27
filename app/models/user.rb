@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
          has_many :enrollments
-         has_many :students, :through => :taking_lessons
+         has_many :assignments
 		 has_many :students, :through => :enrollments
 end

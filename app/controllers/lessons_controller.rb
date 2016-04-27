@@ -4,12 +4,15 @@ class LessonsController < ApplicationController
   def index
   @lessons = Lesson.all
   @lesson = Lesson.new
-
+    #@words_found = params[:words_found]
   end
 
  def show
-   words_array = Array.new
 
+  $lesson_id = params[:id]
+
+   words_array = Array.new
+   
      if @lesson.cards.present? 
           puts words_array
 
@@ -21,18 +24,15 @@ class LessonsController < ApplicationController
           $words_count = $words.scan(/\b/).size/2
           
 
-    end 
+    end   
           $grid_size = @lesson.size
           puts $words
           puts $words_count
+
+      
   end
 
-
-    def new
-         @Lesson = Lesson.new
-    end
-
-
+     
 
         def create
             @lesson = Lesson.new(lesson_params)
@@ -80,8 +80,10 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:title,:size)
+      params.require(:lesson).permit(:title,:size,:words_found)
     end
+
+
 
     helper_method :check
 end

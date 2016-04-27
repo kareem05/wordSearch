@@ -30,6 +30,7 @@
                       var size = '<%=$grid_size%>';
                       var wordsSolved = '0' ;
                       var wordsCount = '<%=$words_count%>';
+                      var wordsFound = 'h';
 
       $(document).ready( function () {
 
@@ -44,10 +45,21 @@
 
                 $('#onWordFound').html(" ");},3000);
                  wordsSolved ++;
-                
+
                 prozent = Math.round (wordsSolved/wordsCount * 100) ;
-                
+               wordsFound += ' ';
+               wordsFound += ob.word;
+               wordsFound += ' ';
+
+                    /*  jQuery.ajax({
+
+                    data: { words_found: wordsFound},
+                              type: 'post',
+                            url: "/lessons/index/",
+
+                          }); */
             },
+
             "onWordSearchComplete" :function(){
               $('#onWordSearchComplete').html("Word Search Complete");
                  
@@ -55,6 +67,10 @@
 
           });
     });
+        
+
+ 
+
 
       function progressSim(){
                       
@@ -92,7 +108,7 @@
                        </script>
 
 </head>
-<body>
+<body class="game">
 <div id="theGrid"></div>
 <div id="onWordSearchComplete"></div>
 <div id="onWordFound"></div>

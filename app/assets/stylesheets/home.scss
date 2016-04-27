@@ -3,16 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-   background-image: image-url('background.png');
-
-}
+   background-image: image-url('background6.png');
+ }
 
 body { 
      font-size: 18px; }
 	.red-circle-button { 
-	  box-shadow: 2px 4px 0 2px rgba(1,5,0,0.1);
-	  border: .5em solid 57925;
-	  font-size: 1.5em; line-height: 1.1em; color: #ffffff; background-color: #0000FF;
+	  box-shadow: 2px 4px 0 2px rgba(1,5,0,0.1)!important;
+	  border: .5em solid 57925!important;
+	  font-size: 1.5em!important; line-height: 1.1em!important; color: #ffffff!important; background-color: #0000FF!important;
 	  margin-top: 10%;
 	  margin-left: 40%;
 	   border-radius: 50%; 
@@ -20,6 +19,6 @@ body {
 	   width: 7em; 
 	   position: relative; }
 	.red-circle-button:hover { 
-	  color:#ffffff; background-color: #e84d0e; text-decoration: none; border-color: #ff7536; }
-	.red-circle-button:visited { color:#ffffff; background-color: #0000FF; text-decoration: none; } 
+	  color:#ffffff!important; background-color: #e84d0e!important; text-decoration: none; border-color: #ff7536!important; }
+	.red-circle-button:visited { color:#ffffff!important; background-color: #0000FF!important; text-decoration: none; } 
 	

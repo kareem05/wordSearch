@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'taking_lesson/create'
-
-  get 'taking_lesson/destroy'
-
   get 'users/index'
   get 'users/show'
   resources :cards
@@ -18,9 +14,12 @@ Rails.application.routes.draw do
   resources 'users'
   resources 'enrollments'
   resources 'lessons'
+  resources 'assignments'
 as :user do
   get 'users/show', :to => 'users#show', :as => :user_root # Rails 3
 end
+
+ post 'lessons/index' => 'lessons#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

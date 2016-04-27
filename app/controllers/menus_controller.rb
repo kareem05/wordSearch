@@ -4,6 +4,7 @@ class MenusController < ApplicationController
   end
 
   def show
+  	
   end
 
 end

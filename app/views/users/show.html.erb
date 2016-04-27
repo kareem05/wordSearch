@@ -20,23 +20,47 @@
 		</li>
 
 		</ul>
+		
 <% if @user.type == "Teacher"%>
 <h2>My Students</h2>
 <%end%>
 
 <% if @user.type == "Student"%>
 <h2>My Friends</h2>
+
+			
 <%end%>
-
-
+	
   <% for enrollment in @user.enrollments %>
   
     	<li class="list-group-item">
       <%= enrollment.student.name%>
+        <!--button type="button" class="btn btn-primary"  > 
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+      
+      </button-->
+      
       <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, enrollment, :method => :delete ,:class => "btn btn-danger"%>
+
       </li>
 
   <% end %>
 
 
 <p><%= link_to "Find Student", users_path ,:class => "btn btn-warning"%></p>
+
+<% if @user.type == "Student"%>
+
+<h1>My Dictionary</h1>
+				
+				<h3>Current Score</h3>
+				<h2><%= $score =%></h2>
+				<%if $tmp.present?%>
+		      <% $tmp.each do |word| %>  
+		      <li class="list-group-item">
+				   <%= word %>
+				  </li>
+				<% end %>
+	     	<% end %>
+			
+<%end%>

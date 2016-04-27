@@ -5,7 +5,9 @@
 <% @lesson.cards.each do |card| %>
 
 <li class="list-group-item">
+<%= image_tag card.image_url(:thumb) , height: "80",width: "100" if card.image?  %>
 <%= card.title %>
+
 </li>
 
 
